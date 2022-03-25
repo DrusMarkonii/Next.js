@@ -1,9 +1,6 @@
 import '../styles/globals.scss'
 import Head from 'next/head';
 import type { AppProps } from 'next/app'
-import Image from 'next/image'
-import starBucksImg from '../public/Starbucks-Logo-700x394.png';
-
 import Layout from '../components/Layout';
 
 const MyApp = ({Component, pageProps}:AppProps) => (
@@ -14,13 +11,7 @@ const MyApp = ({Component, pageProps}:AppProps) => (
     <main>
       <Component {...pageProps} />
     </main>
-    <Image 
-      src={starBucksImg}
-      width={400}
-      height={350}
-      alt="big-img"
-      placeholder='blur'
-    />
+   
   </Layout>
 )
 

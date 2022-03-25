@@ -1,17 +1,36 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Heading from '../components/Heading'
+import Image from 'next/image'
+import starBucksImg from '../public/Starbucks-Logo-700x394.png';
 import styles from '../styles/Home.module.scss'
+import Socials from '../components/Socials'
+
+export const getStaticProps = async () => {
+
+  const response = await fetch(`${process.env.API_HOST}/socials`)
+  const data = await response.json()
+
+  if (!data) {
+      return {
+          notFound: true
+      }
+  }
+
+  return {
+      props: { socials: data }
+  }
+};
 
 
-const Home: NextPage = () => (
+const Home: NextPage = ({socials}:any) => (
   <div className={styles.wrapper}>
     <Head>
         <title>Home</title>
     </Head>
-    <Heading text ="Hello world"/>
+    <Heading text ="Next.js Application"/>
+    <Socials socials={socials}/>
   </div>
 )
 
