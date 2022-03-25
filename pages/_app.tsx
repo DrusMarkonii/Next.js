@@ -16,7 +16,7 @@ const MyApp = ({Component, pageProps}:AppProps) => (
     </main>
     <Image 
       src={starBucksImg}
-      width={500}
+      width={400}
       height={350}
       alt="big-img"
       placeholder='blur'
