@@ -1,6 +1,4 @@
-import { NextPage } from "next"
 import Head from "next/head"
-import Heading from "../../components/Heading"
 import PostInfo from "../../components/PostInfo";
 
 export const getStaticPaths = async () => {
