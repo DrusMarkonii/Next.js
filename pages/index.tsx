@@ -1,5 +1,6 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
+import { FC } from 'react';
+
 import Heading from '../components/Heading'
 import styles from '../styles/Home.module.scss'
 import Socials from '../components/Socials'
@@ -20,7 +21,7 @@ export const getStaticProps = async () => {
   }
 };
 
-const Home: NextPage = ({socials}:any) => (
+const Home: FC = ({socials}:any) => (
   <div className={styles.wrapper}>
     <Head>
       <title>Home</title>

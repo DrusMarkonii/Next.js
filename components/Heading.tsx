@@ -1,6 +1,8 @@
-const Heading = ({tag,  text}:any) => {
-    const Tag = tag || 'h1'
-    return <Tag>{text}</Tag>
- }
+import { FC } from "react";
 
- export default Heading
+const Heading = ({ tag, text }: { tag?: keyof JSX.IntrinsicElements; text: string}) => {
+  const Tag = tag || "h1";
+  return <Tag>{text}</Tag>;
+};
+
+export default Heading;

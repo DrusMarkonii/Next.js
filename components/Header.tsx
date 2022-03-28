@@ -1,10 +1,11 @@
-import { NextPage } from "next"
-import Navbar from "./Navbar"
+import { FC } from "react";
 
-const Header: NextPage = () => (
-    <header>
-        <Navbar /> 
-    </header>
-  )
-  
-  export default Header
+import Navbar from "./Navbar";
+
+const Header: FC = () => (
+  <header>
+    <Navbar />
+  </header>
+);
+
+export default Header;

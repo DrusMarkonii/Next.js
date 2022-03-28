@@ -1,7 +1,14 @@
-import Heading from "./Heading";
+import { FC } from 'react';
 
-const ContactInfo = ({contact}:any) => {
-    const { name, email, address }:any = contact || {};
+import Heading from "./Heading";
+import { contactType } from "../types";
+
+type contactInfoProps = {
+    contact: contactType
+}
+
+const ContactInfo:FC<contactInfoProps> = ({contact}) => {
+    const { name, email, address } = contact || {};
     const  { street, suite, city, zipcode } = address || {};
     
     if (!contact) {
@@ -10,7 +17,7 @@ const ContactInfo = ({contact}:any) => {
 
     return (
         <>
-            <Heading tad="h3" text={name}/>
+            <Heading tag="h3" text={name}/>
             <div>
                 <strong>Email: </strong>
                 {email}

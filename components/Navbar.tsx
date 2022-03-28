@@ -1,7 +1,8 @@
-import { NextPage } from "next"
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from "next/link"
+import { FC } from 'react'
+
 import style from "../styles/Navbar.module.scss"
 
 const navigation = [
@@ -10,17 +11,18 @@ const navigation = [
     { id: 3, title: 'Contacts', path:'/contacts' },
 ]
 
-const Navbar: NextPage = () => {
+const Navbar:FC = () => {
     const {pathname} = useRouter();
+
     return (
         <nav className={style.nav}>
             <div className={style.logo}>
                 <Image src='/logo-light.png' width={60} height={60} alt="logo-light" />
             </div>
             <div className={style.link}>
-                {navigation.map(item => (
-                    <Link href={item.path} key={item.id}>
-                        <a className = { pathname === item.path ? style.active : '' }>{item.title}</a>
+                {navigation.map(({path, id, title}) => (
+                    <Link href={path} key={id}>
+                        <a className = { pathname === path ? style.active : '' }>{title}</a>
                     </Link>
                 ))}
             </div>  
