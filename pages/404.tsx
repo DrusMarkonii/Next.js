@@ -1,8 +1,9 @@
 import { NextPage } from "next"
 import { useEffect } from "react"
 import { useRouter } from "next/router"
-import Heading from "../components/Heading"
 import Head from "next/head"
+
+import Heading from "../components/Heading"
 
 const Error: NextPage = () => {
     const router = useRouter();

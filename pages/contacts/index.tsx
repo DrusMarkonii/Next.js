@@ -1,41 +1,41 @@
-import Head from "next/head"
-import Heading from "../../components/Heading"
-import Link from "next/link"
+import Head from "next/head";
+import Link from "next/link";
 
+import Heading from "../../components/Heading";
 
 export const getStaticProps = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await response.json();
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    const data = await response.json()
-
-    if (!data) {
-        return {
-            notFound: true
-        }
-    }
-
+  if (!data) {
     return {
-        props: { contacts: data }
-    }
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { contacts: data },
+  };
 };
 
-const Contacts = ({contacts}:any) => {
-    
-    return (
+const Contacts = ({ contacts }: any) => {
+  return (
     <>
-    <Head>
+      <Head>
         <title>Contacts</title>
-    </Head>
-    <Heading text="Contacts list:" />
-    <ul>
-        {contacts && contacts.map( ({id, name}:any) => (
+      </Head>
+      <Heading text="Contacts list:" />
+      <ul>
+        {contacts &&
+          contacts.map(({ id, name }: any) => (
             <li key={id}>
-               <Link href={`/contacts/${id}`}><strong>{name}</strong></Link>
+              <Link href={`/contacts/${id}`}>
+                <strong>{name}</strong>
+              </Link>
             </li>
-        ))}
-    </ul>
+          ))}
+      </ul>
     </>
-  
-  )
-}
-  export default Contacts
+  );
+};
+export default Contacts;

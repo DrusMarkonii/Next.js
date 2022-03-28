@@ -1,46 +1,46 @@
-import Head from "next/head"
+import Head from "next/head";
+
 import PostInfo from "../../components/PostInfo";
 
 export const getStaticPaths = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await response.json();
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const data = await response.json()
+  const paths = data.map(({ id }: any) => ({
+    params: { id: `${id}` },
+  }));
 
-    const paths = data.map(({id}:any) => ({
-        params: {id: `${id}`}
-    }))
-
-    return {
-        paths,
-        fallback: false,
-    }
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
+export const getStaticProps = async (context: any) => {
+  const { id } = context.params;
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
+  const data = await response.json();
 
-export const getStaticProps = async (context:any) => {
-    const {id} = context.params;
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    const data = await response.json()
-
-    if (!data) {
-        return {
-            notFound: true
-        }
-    }
-
+  if (!data) {
     return {
-        props: { post: data }
-    }
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { post: data },
+  };
 };
 
-
-const Post = ({post}:any) => (
-    <>
+const Post = ({ post }: any) => (
+  <>
     <Head>
-        <title>Post</title>
+      <title>Post</title>
     </Head>
-    <PostInfo post={post}/>
-    </>
-  )
-  
-  export default Post
+    <PostInfo post={post} />
+  </>
+);
+
+export default Post;
