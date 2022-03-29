@@ -1,13 +1,6 @@
 import { FC } from 'react';
-import Image from 'next/image'
 
-
-import Heading from "./Heading";
-import { contactType } from "../types";
-
-// type contactInfoProps = {
-//     contact: contactType
-// }
+import Heading from "../Heading";
 
 const GameInfo:FC<any> = ({gameOne}) => {
     const {name, added, platforms, background_image, released, rating } = gameOne
@@ -30,7 +23,6 @@ const GameInfo:FC<any> = ({gameOne}) => {
             <div>
                 <strong>Img: </strong>
                 <img src={img}  width={300} height={200}/>
-                {/* <Image src={img} width={400} height={400}/> */}
             </div>
             <div>
                 <strong>Rating: </strong>

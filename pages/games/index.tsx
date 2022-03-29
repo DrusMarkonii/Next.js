@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Image from 'next/image'
-import Link from "next/link";
 import { GetStaticProps } from 'next'
-
 
 import { FC } from "react";
 import Heading from "../../components/Heading";
+import GamesList from "../../components/Games/GamesList";
 
 // type contactTypeProps = {
 //     contacts: [contactType]
@@ -34,17 +32,8 @@ const Contacts:FC<any> = ({ games }) => {
         <title>Contacts</title>
       </Head>
       <Heading text="Games list:" />
-      <ul>
-        {games &&
-          games.map(({ id, name, background_image}: any) => (
-            <li key={id}>
-              <Link href={`/games/${name}`}>
-                <img src={background_image}  width={300} height={200}/>
-              </Link>
-                <strong>{name}</strong>
-            </li>
-          ))}
-      </ul>
+      <GamesList games={games}/>
+      
     </>
   );
 };

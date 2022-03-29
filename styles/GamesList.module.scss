@@ -1,0 +1,22 @@
+.gamePage {
+    display: flex;
+    width: 1280px;
+    justify-content: center;
+    
+}
+
+.gameCardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    
+}
+.gameCardItem{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex-wrap: wrap;
+    border: 2px solid white;
+    margin: 5px;
+}

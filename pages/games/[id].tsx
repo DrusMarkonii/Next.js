@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
-import GameInfo from "../../components/GameInfo";
+import GameInfo from "../../components/Games/GameInfo";
 
 
 
