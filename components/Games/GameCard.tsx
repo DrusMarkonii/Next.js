@@ -9,12 +9,14 @@ const GameCard: FC<any> = ({ games }) => {
       <ul className={styles.gameCardList}>
         {games &&
           games.map(({ id, name, background_image }: any) => (
-            <li key={id} className={styles.gameCardItem}>
-              <Link href={`/games/${name}`}>
+            <Link href={`/games/${name}`} key={id}>
+              <li key={id} className={styles.gameCardItem}>
                 <img src={background_image} width={300} height={200} />
-              </Link>
-              <strong>{name}</strong>
-            </li>
+                <div className={styles.gameNameBox}>
+                  <p className={styles.gameNameItem}>{name}</p>
+                </div>
+              </li>
+            </Link>
           ))}
       </ul>
     </div>

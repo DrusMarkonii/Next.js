@@ -2,21 +2,53 @@
     display: flex;
     width: 1280px;
     justify-content: center;
-    
+    flex-direction: column;
+    border: 1px solid white;
+    margin: 0 auto;
 }
 
 .gameCardList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-
-    
+    justify-content: center;    
 }
+
+.titlePage {
+    text-align: center;
+}
+
 .gameCardItem{
     display: flex;
     flex-direction: column;
     width: 300px;
+    border: 2px solid rgb(61, 58, 58);
     flex-wrap: wrap;
-    border: 2px solid white;
-    margin: 5px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: rgb(58, 50, 50);
+}
+
+.gameCardItem:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
+}
+
+.gameNameItem {
+    text-align: center;
+    padding:  0 5px;
+    align-items: center;
+}
+
+.gameNameBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameInfoPage {
+
+}
+
+.statistics {
+    display: flex;
 }
