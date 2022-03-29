@@ -1,18 +1,14 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
-import { contactType } from "../../types";
+import GameInfo from "../../components/GameInfo";
 
-import ContactInfo from "../../components/ContactInfo";
 
-type contactTypeProps = {
-    contact: contactType
-}
 
-export const getServerSideProps:GetServerSideProps = async (context) => {
-  const { id }:any = context.params;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id }: any = context.params;
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${id}`
+    `https://api.rawg.io/api/games?key=3d82f555dfe84d948d40e655b5b7ebf5&dates=2019-09-01,2019-09-30&platforms=18,1,7}`
   );
   const data = await response.json();
 
@@ -23,17 +19,23 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
   }
 
   return {
-    props: { contact: data },
+    props: { contact: data.results, id },
   };
 };
 
-const Contact:FC<contactTypeProps> = ({ contact }) => (
-  <>
-    <Head>
-      <title>Contact</title>
-    </Head>
-    <ContactInfo contact={contact} />
-  </>
-);
+const Contact: FC<any> = ({ id, contact }) => {
+ const gameOne = contact.filter((game: any) => game.name === id)[0]
+
+  
+  
+  return (
+    <>
+      <Head>
+        <title>{id}</title>
+      </Head>
+      <GameInfo gameOne={gameOne} />
+    </>
+  );
+};
 
 export default Contact;

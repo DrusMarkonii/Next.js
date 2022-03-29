@@ -2,10 +2,10 @@ import Head from "next/head";
 import Image from 'next/image'
 import Link from "next/link";
 import { GetStaticProps } from 'next'
-import { contactType } from '../../types'
 
-import Heading from "../../components/Heading";
+
 import { FC } from "react";
+import Heading from "../../components/Heading";
 
 // type contactTypeProps = {
 //     contacts: [contactType]
@@ -22,14 +22,12 @@ export const getStaticProps:GetStaticProps = async () => {
   }
 
   return {
-    props: { games: data.results },
+    props: { games: data.results},
   };
 };
 
 const Contacts:FC<any> = ({ games }) => {
-    console.log(games)
-    const url = games[0].background_image
-    console.log(`"${url}"`)
+
   return (
     <>
       <Head>
@@ -38,11 +36,12 @@ const Contacts:FC<any> = ({ games }) => {
       <Heading text="Games list:" />
       <ul>
         {games &&
-          games.map(({ id, name}: any) => (
+          games.map(({ id, name, background_image}: any) => (
             <li key={id}>
-              {/* <Link href={`/contacts/${id}`}> */}
+              <Link href={`/games/${name}`}>
+                <img src={background_image}  width={300} height={200}/>
+              </Link>
                 <strong>{name}</strong>
-              {/* </Link> */}
             </li>
           ))}
       </ul>
