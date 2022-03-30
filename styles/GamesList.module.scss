@@ -1,54 +1,127 @@
 .gamePage {
-    display: flex;
-    width: 1280px;
-    justify-content: center;
-    flex-direction: column;
-    border: 1px solid white;
-    margin: 0 auto;
+  display: flex;
+  max-width: 750px;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .gameCardList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .titlePage {
-    text-align: center;
+  text-align: center;
 }
 
-.gameCardItem{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    border: 2px solid rgb(61, 58, 58);
-    flex-wrap: wrap;
-    margin: 8px;
-    cursor: pointer;
-    background-color: rgb(58, 50, 50);
+.gameCardItem {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 2px solid rgb(61, 58, 58);
+  flex-wrap: wrap;
+  margin: 8px;
+  cursor: pointer;
+  background-color: rgb(58, 50, 50);
 }
 
 .gameCardItem:hover {
-    transform: scale(1.05);
-    transition: 0.4s;
+  transform: scale(1.05);
+  transition: 0.4s;
 }
 
 .gameNameItem {
-    text-align: center;
-    padding:  0 5px;
-    align-items: center;
+  text-align: center;
+  padding: 0 5px;
+  align-items: center;
 }
 
 .gameNameBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gameInfoPage {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .statistics {
+  display: flex;
+  width: 80%;
+  max-width: 600px;
+  margin: 10px auto -20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.titleGameInfo {
+  text-align: center;
+  color: rgb(202, 202, 202);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.titleGameInfo:hover {
+  transform: scale(1.08);
+  opacity: 1;
+  transition: 1s;
+}
+
+.imgRating {
+  position: relative;
+  bottom: 3px;
+  left: 5px;
+  transform: scale(1.2);
+}
+
+.imgDownload {
+  position: relative;
+  bottom: 18px;
+  right: 5px;
+}
+.textReleased {
+  position: relative;
+  bottom: 20px;
+  right: 8px;
+}
+
+.ratingBox,
+.downloadBox,
+.releasedBox,
+.platformBox {
+  display: flex;
+}
+
+.platformBox {
+    width:100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.platformList {
+    list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.platformItem {
+    margin-right: 15px;
+}
+
+.screenShotCard {
+    margin: 10px 15px 0 0;
+}
+
+.screenShotCard:hover {
+    transform: scale(1.5);
+    transition: 1s;
+}
+
+.screenshotBox {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
