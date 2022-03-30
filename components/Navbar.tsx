@@ -7,7 +7,7 @@ import style from "../styles/Navbar.module.scss"
 
 const navigation = [
     { id: 1, title: 'Home', path:'/' },
-    { id: 2, title: 'Posts', path:'/posts'} ,
+    { id: 2, title: 'News', path:'/news'} ,
     { id: 3, title: 'Contacts', path:'/contacts' },
     { id: 4, title: 'Games', path:'/games' },
 ]

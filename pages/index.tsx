@@ -29,6 +29,7 @@ const Home: FC = ({socials}:any) => (
     <Heading text ="Next.js Application"/>
     <Socials socials={socials}/>
   </div>
+  
 );
 
 export default Home;

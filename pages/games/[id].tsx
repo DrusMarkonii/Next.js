@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const Contact: FC<any> = ({ id, contact }) => {
+const Game: FC<any> = ({ id, contact }) => {
  const gameOne = contact.filter((game: any) => game.name === id)[0]
 
   
@@ -38,4 +38,4 @@ const Contact: FC<any> = ({ id, contact }) => {
   );
 };
 
-export default Contact;
+export default Game;

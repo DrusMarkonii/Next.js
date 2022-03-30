@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import PostInfo from "../../components/PostInfo";
+import PostInfo from "../../components/News/NewsCard";
 
 export const getStaticPaths = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
