@@ -2,13 +2,13 @@ import Head from "next/head";
 
 import styles from "../styles/Socials.module.scss";
 
-const Socials = ({ socials }:any) => {
+const Socials = ({ socials }: any) => {
   if (!socials) {
     return null;
   }
 
   return (
-    <>
+    <div className={styles.socialsList}>
       <Head>
         <link
           rel="stylesheet"
@@ -25,7 +25,7 @@ const Socials = ({ socials }:any) => {
             </li>
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 

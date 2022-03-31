@@ -6,9 +6,9 @@ import styles from "../../styles/NewsList.module.scss";
 
 const NewsList: FC<any> = ({ news }) => {
   return (
-    <div className={styles.gamesList}>
-      <h1>News</h1>
-      <ul>
+    <div className={styles.newsPage}>
+      <h1>News:</h1>
+      <ul className={styles.newsList}>
         {news.map(
           ({
             publishedAt,

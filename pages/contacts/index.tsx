@@ -1,16 +1,18 @@
 import Head from "next/head";
 import Link from "next/link";
-import { GetStaticProps } from 'next'
-import { contactType } from '../../types'
+import { GetStaticProps } from "next";
+import { contactType } from "../../types";
 
 import Heading from "../../components/Heading";
 import { FC } from "react";
 
-type contactTypeProps = {
-    contacts: [contactType]
-}
+import styles from "../../styles/Contact.module.scss";
 
-export const getStaticProps:GetStaticProps = async () => {
+type contactTypeProps = {
+  contacts: [contactType];
+};
+
+export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
 
@@ -25,24 +27,24 @@ export const getStaticProps:GetStaticProps = async () => {
   };
 };
 
-const Contacts:FC<contactTypeProps> = ({ contacts }) => {
+const Contacts: FC<contactTypeProps> = ({ contacts }) => {
   return (
-    <>
+    <div className={styles.contactPage}>
       <Head>
         <title>Contacts</title>
       </Head>
       <Heading text="Contacts list:" />
-      <ul>
+      <ul className={styles.contactList}>
         {contacts &&
           contacts.map(({ id, name }: any) => (
-            <li key={id}>
-              <Link href={`/contacts/${id}`}>
+            <Link href={`/contacts/${id}`} key={id}>
+              <li className={styles.contactListItem}>
                 <strong>{name}</strong>
-              </Link>
-            </li>
+              </li>
+            </Link>
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 export default Contacts;

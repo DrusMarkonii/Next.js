@@ -1,33 +1,35 @@
-import { FC } from 'react';
+import { FC } from "react";
 
 import Heading from "./Heading";
+
+import styles from "../styles/Contact.module.scss";
 import { contactType } from "../types";
 
 type contactInfoProps = {
-    contact: contactType
-}
+  contact: contactType;
+};
 
-const ContactInfo:FC<contactInfoProps> = ({contact}) => {
-    const { name, email, address } = contact || {};
-    const  { street, suite, city, zipcode } = address || {};
-    
-    if (!contact) {
-        return <Heading tag="h3" text = "Empty contact" />
-    }
+const ContactInfo: FC<contactInfoProps> = ({ contact }) => {
+  const { name, email, address } = contact || {};
+  const { street, suite, city, zipcode } = address || {};
 
-    return (
-        <>
-            <Heading tag="h3" text={name}/>
-            <div>
-                <strong>Email: </strong>
-                {email}
-            </div>
-            <div>
-                <strong>Address: </strong>
-                {`${street}, ${suite}, ${city}, ${zipcode}`}
-            </div>
-        </>
-    )
-}
+  if (!contact) {
+    return <Heading tag="h3" text="Empty contact" />;
+  }
 
-export default ContactInfo
+  return (
+    <div className={styles.contactInfoItem}>
+      <Heading tag="h3" text={name} />
+      <div>
+        <strong>Email: </strong>
+        {email}
+      </div>
+      <div>
+        <strong>Address: </strong>
+        {`${street}, ${suite}, ${city}, ${zipcode}`}
+      </div>
+    </div>
+  );
+};
+
+export default ContactInfo;

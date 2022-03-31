@@ -1,8 +1,3 @@
-/* eslint-disable @next/next/link-passhref */
-import Head from "next/head";
-import Link from "next/link";
-
-import Heading from "../../components/Heading";
 import NewsList from "../../components/News/NewsList";
 
 export const getStaticProps = async () => {
@@ -21,10 +16,9 @@ export const getStaticProps = async () => {
 };
 
 const News = ({ news }: any) => {
-  console.log(news);
   return (
     <>
-      <NewsList news={news}/>
+      <NewsList news={news} />
     </>
   );
 };

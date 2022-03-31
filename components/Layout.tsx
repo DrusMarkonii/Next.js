@@ -10,7 +10,7 @@ type layoutProps = {
 const Layout: FC<layoutProps> = ({ children }) => (
   <>
     <Header />
-    { children }
+    {children}
     <Footer />
   </>
 );

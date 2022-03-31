@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { FC } from "react";
+
 import GameInfo from "../../components/Games/GameInfo";
-
-
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id }: any = context.params;
@@ -24,10 +23,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 const Game: FC<any> = ({ id, contact }) => {
- const gameOne = contact.filter((game: any) => game.name === id)[0]
+  const gameOne = contact.filter((game: any) => game.name === id)[0];
 
-  
-  
   return (
     <>
       <Head>

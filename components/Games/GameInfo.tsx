@@ -17,9 +17,6 @@ const GameInfo: FC<any> = ({ gameOne }) => {
     short_screenshots,
   } = gameOne;
 
-  console.log(gameOne);
-  console.log(short_screenshots);
-
   if (!gameOne) {
     return <Heading tag="h3" text="Empty contact" />;
   }

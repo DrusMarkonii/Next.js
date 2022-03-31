@@ -1,0 +1,36 @@
+.contactList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contactListItem {
+    border: 1px solid black;
+    background-color: rgb(238, 236, 238);
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+    text-align:start;
+}
+
+.contactListItem:hover {
+    background-color: rgb(117, 83, 136);
+    transform: scale(1.005);
+    color: white;
+}
+
+.contactPage {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contactInfoItem {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 0 auto;
+}
