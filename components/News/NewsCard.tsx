@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { FC } from "react";
+import { NextPage } from "next";
+import { newsType } from "../../types";
 
 import styles from "../../styles/NewsList.module.scss";
 
-const NewsCard: FC<any> = ({
+const NewsCard:  NextPage<newsType> = ({
   publishedAt,
   title,
   author,

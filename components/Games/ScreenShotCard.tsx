@@ -1,8 +1,13 @@
-import { FC } from "react";
+import { NextPage } from "next";
 
 import styles from "../../styles/GamesList.module.scss";
 
-const ScreenShotCard: FC<any> = ({ id, image }) => {
+type ScreenShotType = {
+  id: string;
+  image: string
+}
+
+const ScreenShotCard: NextPage<ScreenShotType> = ({ id, image }) => {
   return (
     <div className={styles.screenShotCard}>
       <img key={id} src={image} alt="screenshot" width={250} height={150} />

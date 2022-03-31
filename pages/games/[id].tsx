@@ -1,8 +1,13 @@
 import Head from "next/head";
-import { GetServerSideProps } from "next";
-import { FC } from "react";
+import { GetServerSideProps, NextPage } from "next";
 
-import GameInfo from "../../components/Games/GameInfo";
+import GameInfo from "../../components/Games/GameCard";
+import { gameType } from "../../types";
+
+type GamePropsId = {
+  game: gameType;
+  id: string;
+};
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id }: any = context.params;
@@ -18,13 +23,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   return {
-    props: { contact: data.results, id },
+    props: { game: data.results, id },
   };
 };
 
-const Game: FC<any> = ({ id, contact }) => {
-  const gameOne = contact.filter((game: any) => game.name === id)[0];
-
+const Game: NextPage<GamePropsId> = ({ id, game }) => {
+  const gameOne = game.filter((game: gameType) => game.name === id)[0];
   return (
     <>
       <Head>

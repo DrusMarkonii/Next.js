@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { NextPage } from "next";
 
 import style from "../styles/Navbar.module.scss";
 
@@ -12,7 +12,7 @@ const navigation = [
   { id: 4, title: "Contacts", path: "/contacts" },
 ];
 
-const Navbar: FC = () => {
+const Navbar: NextPage = () => {
   const { pathname } = useRouter();
 
   return (

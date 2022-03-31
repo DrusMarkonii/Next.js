@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { GetServerSideProps } from "next";
-import { FC } from "react";
+import { GetServerSideProps, NextPage } from "next";;
 
 import { contactType } from "../../types";
 import ContactInfo from "../../components/ContactInfo";
@@ -29,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const Contact: FC<contactTypeProps> = ({ contact }) => (
+const Contact: NextPage<contactTypeProps> = ({ contact }) => (
   <div className={styles.contactItem}>
     <Head>
       <title>Contact</title>

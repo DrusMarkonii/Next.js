@@ -1,8 +1,12 @@
 import Head from "next/head";
-import { GetStaticProps } from "next";
-import { FC } from "react";
+import { GetStaticProps, NextPage } from "next";
 
-import GamesList from "../../components/Games/GamesList";
+import GamesList from "../../components/Games/GamePage";
+import { gameType } from "../../types";
+
+type GameProps = {
+  games: gameType 
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch(
@@ -21,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Games: FC<any> = ({ games }) => {
+const Games:NextPage <GameProps> = ({ games }) => {
   return (
     <>
       <Head>

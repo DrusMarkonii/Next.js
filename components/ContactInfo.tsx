@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { NextPage } from "next";
 
 import Heading from "./Heading";
 
@@ -9,7 +9,7 @@ type contactInfoProps = {
   contact: contactType;
 };
 
-const ContactInfo: FC<contactInfoProps> = ({ contact }) => {
+const ContactInfo:  NextPage <contactInfoProps> = ({ contact }) => {
   const { name, email, address } = contact || {};
   const { street, suite, city, zipcode } = address || {};
 

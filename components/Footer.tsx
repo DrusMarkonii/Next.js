@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { NextPage } from "next";
 
 import Heading from "./Heading";
 
-const Footer: FC = () => (
+const Footer: NextPage = () => (
   <footer>
     <Heading tag="h3" text="PS Drus M." />
   </footer>
