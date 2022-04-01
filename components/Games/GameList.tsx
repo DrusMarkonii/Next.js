@@ -1,10 +1,13 @@
 import { NextPage } from "next";
-import { gameTypeProps } from "./GamePage";
 import Link from "next/link";
 import { useMemo } from "react";
 import { gameType } from "../../types";
 
 import styles from "../../styles/GamesList.module.scss";
+
+type gameTypeProps = {
+  games: [gameType]
+}
 
 const GameList: NextPage<gameTypeProps> = ({ games }) => {
   const gameMemo = useMemo(

@@ -5,7 +5,7 @@ import GameInfo from "../../components/Games/GameCard";
 import { gameType } from "../../types";
 
 type GamePropsId = {
-  game: gameType;
+  game: [gameType];
   id: string;
 };
 

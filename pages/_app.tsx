@@ -10,8 +10,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
   <Layout>
     <Head>
       <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
         rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
       />
     </Head>
     <main>

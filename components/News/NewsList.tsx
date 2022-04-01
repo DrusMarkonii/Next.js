@@ -8,7 +8,7 @@ import styles from "../../styles/NewsList.module.scss";
 import React from "react";
 
 type NewsListType = {
-  news: newsType;
+  news: [newsType];
 };
 
 const NewsList: NextPage<NewsListType> = ({ news }) => {

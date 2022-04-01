@@ -2,8 +2,8 @@ import { NextPage } from "next";
 import { gameType } from "../../types";
 
 
-export type gameTypeProps = {
-  games: gameType
+type gameTypeProps = {
+  games: [gameType]
 }
 
 import GameList from "./GameList";

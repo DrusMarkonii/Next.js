@@ -5,7 +5,7 @@ import GamesList from "../../components/Games/GamePage";
 import { gameType } from "../../types";
 
 type GameProps = {
-  games: gameType 
+  games: [gameType] 
 }
 
 export const getStaticProps: GetStaticProps = async () => {
